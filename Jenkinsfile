@@ -23,10 +23,10 @@ pipeline {
                 sh "docker push barathg25/java"
             }
         }
-        stage ("docker conatainer"){
+        stage ("k8s"){
             steps {
-                sh "docker rm -f java"
-                sh "docker run -d --name java -p 8087:8080 barathg25/java"
+                sh "export KUBECONFIG=/etc/kubernetes/admin.conf"
+                sh "sudo kubectl rollout restart deployment/java-app"
             }
         }
     }
