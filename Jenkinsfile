@@ -1,5 +1,6 @@
 pipeline {
-    agent any
+    /*agent any*/
+    agent {label 'devops'}
     stages{
         stage ("clone") {
             steps {
