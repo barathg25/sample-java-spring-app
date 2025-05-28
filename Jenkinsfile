@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage ("clone") {
             steps {
-                git branch: 'main', url: 'https://github.com/barathg25/sample-java-spring-app.git'
+                git branch: 'master', url: 'https://github.com/barathg25/sample-java-spring-app.git'
             }
         }
         stage ("build") {
