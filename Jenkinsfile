@@ -31,6 +31,7 @@ pipeline {
             }
         }
 
+
       /*  stage ("k8s"){
             steps {
                 sh "export KUBECONFIG=/etc/kubernetes/admin.conf"
