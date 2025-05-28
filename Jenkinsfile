@@ -26,6 +26,15 @@ pipeline {
         }
         stage ("k8s") {
             steps {
+                sh "kubectl rollout restart deployment/java-app"
+                }
+            }
+        }
+}
+
+        /*
+        stage ("k8s") {
+            steps {
                 withEnv(["KUBECONFIG=/var/lib/jenkins/.kube/config"]) {
                     sh "kubectl rollout restart deployment/java-app"
                 }
@@ -42,3 +51,4 @@ pipeline {
         }*/
     }
 }
+*/
