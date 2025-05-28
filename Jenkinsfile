@@ -23,12 +23,20 @@ pipeline {
                 sh "docker push barathg25/java"
             }
         }
-        stage ("k8s"){
+        stage ("k8s") {
+            steps {
+                withEnv(["KUBECONFIG=/var/lib/jenkins/.kube/config"]) {
+                    sh "kubectl rollout restart deployment/java-app"
+                }
+            }
+        }
+
+      /*  stage ("k8s"){
             steps {
                 sh "export KUBECONFIG=/etc/kubernetes/admin.conf"
-               /* sh "sudo kubectl rollout restart deployment/java-app"*/
+                sh "sudo kubectl rollout restart deployment/java-app"
                 sh "sudo /usr/local/bin/kubectl rollout restart deployment/java-app"
            }
-        }
+        }*/
     }
 }
