@@ -44,13 +44,13 @@ pipeline {
         }
 
 
-      /*  stage ("k8s"){
+       stage ("k8s"){
             steps {
                 sh "export KUBECONFIG=/etc/kubernetes/admin.conf"
                 sh "sudo kubectl rollout restart deployment/java-app"
                 sh "sudo /usr/local/bin/kubectl rollout restart deployment/java-app"
            }
-        }*/
+        }
     }
 }
 */
