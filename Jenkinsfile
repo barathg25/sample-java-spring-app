@@ -26,10 +26,12 @@ pipeline {
         }
         stage ("k8s") {
             steps {
-                sh "kubectl rollout restart deployment/java-app"
-                }
+                sh "kubectl rollout restart deployment/java-app"        
             }
+            
         }
+        
+    }
 }
 
         /*
