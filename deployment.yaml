@@ -17,15 +17,7 @@ spec:
         image: barathg25/java
         ports:
         - containerPort: 8080
-        volumeMounts:
-        - name: local-persistent-storage
-          mountPath: /opt/app
-      volumes:
-      - name: local-persistent-storage
-        persistentVolumeClaim:
-          claimName: test-pvc
-
-
+        
         
 ---
 
