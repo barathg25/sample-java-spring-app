@@ -3,14 +3,14 @@ kind: Ingress
 metadata:
   name: java-app-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /  # important!
 spec:
   ingressClassName: nginx
   rules:
-  - host: java.local
+  - host: cicd.convergentechnologies.com
     http:
       paths:
-      - path: /
+      - path: /java
         pathType: Prefix
         backend:
           service:
